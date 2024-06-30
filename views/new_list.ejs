@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <!-- navbar -->
+    <%- include('./partials/nav.ejs') %>
+
+      <!-- create new to-do list -->
+      <form action="/create" class="container pt-5" method="post">
+        <div class="mb-3 form-group">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" class="form-control" name="title" id="title" placeholder="learning" required>
+        </div>
+        <div class="mb-3 form-group">
+          <label for="time" class="form-label">Time</label>
+          <input type="time" class="form-control" name="time" id="time" required>
+        </div>
+        <div class="mb-3 form-group">
+          <label for="task" class="form-label">Task</label>
+          <textarea class="form-control" name="task" id="task" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-outline-info">Submit</button>
+
+      </form>
+
+      <%- include('./partials/footer.ejs') %>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- head -->
+<%- include('./partials/head.ejs') %>
+<body>
+    <!-- navbar -->
+    <%- include('./partials/nav.ejs') %>
+
+    <!-- existing to_do list -->
+    <div class="pt-5 container">
+        <% if(To_do_list.length>0) {%>
+            <% To_do_list.forEach(list => { %>
+                <h4 class="text-info"><%= list.title %></h4>
+                <h4 class="text-danger"><%= list.time %></h4>
+                <p class="text-warning"><%= list.task  %></p>
+                <hr>
+             <% }) %>   
+            
+        <% }else{ %>
+             <h3 class="text-info container">Create a new to do list</h3>
+        <% } %>
+    </div>
+
+
+    <%- include('./partials/footer.ejs') %>   
+
+</body>
+</html>
